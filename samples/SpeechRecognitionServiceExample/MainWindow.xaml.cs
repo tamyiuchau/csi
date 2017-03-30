@@ -616,7 +616,7 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
             {
                 this.WriteLine("********* Final n-BEST Results *********");
                 HttpClient client = new HttpClient();
-                var get = client.GetAsync("localhost:8080/lp/api?s=" + e.PhraseResponse.Results[0].DisplayText).Result;
+                var get = client.GetAsync("http://localhost:8080/lp/api?s=" + e.PhraseResponse.Results[0].DisplayText).Result;
                 CeVIO.Talk.RemoteService.Talker talker = new CeVIO.Talk.RemoteService.Talker();
 
                 if (string.IsNullOrWhiteSpace(talker.Cast))
